@@ -1,0 +1,13 @@
+<?php
+
+/** @var $viewModel \Perspective\Simple\ViewModel\SimpleModel */
+/** @var $escaper \Magento\Framework\Escaper */
+
+?>
+
+<?php $viewModel = $block->getViewModel(); ?>
+
+<?php foreach ($viewModel->getProducts('S%',45,35) as $Product) : ?>
+    <h2> <?= $Product->getName(); ?> </h2>
+    <h3> <?= round($Product->getPrice(), 2) . '$'; ?> </h3>
+<?php endforeach; ?>
