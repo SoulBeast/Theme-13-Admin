@@ -6,8 +6,22 @@
 ?>
 
 <?php $viewModel = $block->getViewModel(); ?>
-
-<?php foreach ($viewModel->getProducts('S%',45,35) as $Product) : ?>
-    <h2> <?= $Product->getName(); ?> </h2>
-    <h3> <?= round($Product->getPrice(), 2) . '$'; ?> </h3>
+<?php $TempSize = 8 ?>
+<?php $AmountSize = $TempSize ?>
+<?php $Letter = 'S%'; ?>
+<?php foreach ($viewModel->getProducts($Letter,75,20,$AmountSize) as $Product) : ?>
+    <?php if ($Product->getPrice() == 0) 
+{
+    $TempSize = $TempSize + 1;
+}   ?>
+<?php endforeach; ?>
+<?php $AmountSize = $TempSize; ?>
+<?php foreach ($viewModel->getProducts($Letter,75,20,$AmountSize) as $Product) : ?>
+<?php if ($Product->getPrice() == 0) 
+{
+}
+elseif ($Product->getPrice() > 0){?>
+<h2> <?= $Product->getName(); ?> </h2>
+<h2> <?= round($Product->getPrice(), 2) . '$'; ?> </h2>
+<?php } ?>
 <?php endforeach; ?>
