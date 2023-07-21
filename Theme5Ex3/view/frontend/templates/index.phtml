@@ -1,0 +1,20 @@
+<?php
+/** @var \Perspective\Theme5Ex3\Block\Template $block */
+?>
+
+<?php
+
+$viewModel = $block->getData('view_model');
+
+$ids = [20,21,23];
+$categoryProducts = $viewModel->getProductCollectionByCategories($ids);
+foreach ($ids as $id) {
+    $categoryName = $viewModel->getCategoryName($id);
+    echo $categoryName . ' ';
+}
+    echo "<br><br>";
+foreach ($categoryProducts as $product) {
+    echo "Name: " . $product->getName() . '<br />';
+    echo "Price: " . round($product->getData("price"), 2) . "$" . '<br />';
+    echo "Sku: " . $product->getSku() . '<br><br />';
+}
