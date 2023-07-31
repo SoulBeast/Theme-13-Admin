@@ -1,0 +1,11 @@
+<?php
+/** @var \Perspective\Theme7Ex2\Block\Template $block */
+?>
+
+<?php
+
+$viewModel = $block->getData('view_model');
+
+$quote = $viewModel->getCheckoutSession();
+
+var_dump($quote->getData());

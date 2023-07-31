@@ -1,0 +1,11 @@
+<?php
+/** @var \Perspective\Theme7Ex4\Block\Template $block */
+?>
+
+<?php
+
+$viewModel = $block->getData('view_model');
+
+$backendQuote = $viewModel->getBackendQuote();
+
+var_dump($backendQuote->getData());

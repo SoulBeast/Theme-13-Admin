@@ -1,0 +1,29 @@
+<?php
+/** @var \Perspective\Theme7Ex3\Block\Template $block */
+?>
+
+<?php
+
+$viewModel = $block->getData('view_model');
+
+$quote = $viewModel->getCheckoutSession();
+
+$customerId = $quote->getData("customer_id");
+
+$wishlist = $viewModel->getWishlistByCustomerId($customerId);
+
+#echo($quote->getData("customer_id"));
+
+if(count($wishlist)) {
+foreach ($wishlist as $_item) {
+
+echo "Product ID: " . $_item->getProduct()->getId() . "<br>";
+echo "Product Name: " . $_item->getProduct()->getName() . "<br>";
+echo "Product Sku: " . $_item->getProduct()->getSku() . "<br>";
+echo "Product Price: " . round($_item->getProduct()->getPrice(), 2) . " $<br>";
+#var_dump($_item->getProduct()->getData());
+echo "<br>";
+}
+} else {
+    echo __("Nothing found in your wishlist!");
+}

@@ -1,0 +1,22 @@
+<?php
+/** @var \Perspective\Theme7Ex1\Block\Template $block */
+?>
+
+<?php 
+
+$viewModel = $block->getData('view_model');
+
+$order = $viewModel->getOrderBySession();
+echo "Order ID: " . $order->getEntityId()."<br>";
+echo "Shipping Method: " . $order->getShippingMethod()."<br>"; // shipping mehtod
+echo "Payment Method: " . $order->getPayment()->getData("method")."<br>";   // payment method
+echo "Customer Email: " . $order->getCustomerEmail()."<br>";
+echo "Customer Firstname: " . $order->getCustomerFirstname()."<br>";
+echo "Customer Lastname: " . $order->getCustomerLastname()."<br>";
+
+$orders = $order->loadByIncrementId($order->getIncrementId());
+$itemsList = $orders->getItems();
+foreach($itemsList as $items){
+    echo "Product Name: " . $items->getName()."<br>";
+}
+?>

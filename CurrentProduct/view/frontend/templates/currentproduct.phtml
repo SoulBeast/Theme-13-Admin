@@ -1,0 +1,22 @@
+<?php
+
+/** @var \Perspective\CurrentProduct\Block\Template $block */
+?>
+
+<?php $viewModel = $block->getData('view_model'); ?>
+
+<?php
+
+if ($currentProduct = $viewModel->getCurrentProduct()) {
+    echo $currentProduct->getName() . '<br />';
+    echo $currentProduct->getSku() . '<br />';
+    echo $currentProduct->getFinalPrice() . '<br />';
+    echo $currentProduct->getProductUrl() . '<br />';
+    print_r($currentProduct->getCategoryIds()) . '<br />';
+}
+
+if ($currentCategory = $viewModel->getCurrentCategory()) {
+    echo $currentCategory->getName() . '<br />';
+    echo $currentCategory->getUrl() . '<br />';
+}
+?>
