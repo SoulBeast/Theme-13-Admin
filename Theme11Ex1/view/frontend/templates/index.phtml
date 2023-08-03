@@ -1,0 +1,54 @@
+<?php
+/** @var \Perspective\Theme11Ex1\Block\Template $block */
+?>
+
+<?php
+
+$viewModel = $block->getData('view_model');
+
+$collection = $viewModel->getPostCollection();
+
+foreach ($collection as $item) {
+    if ($item->getConsultationName() == "Fifth consultation"){
+        echo "<pre>";
+        print_r($item->getData());
+        echo "</pre>";
+    }
+}
+/* foreach ($collection as $item) {
+    echo "Consultation name: " . $item->getConsultationName() . "<br>";
+    echo "Consultation price per hour: " . $item->getPricePerHour() . " $<br>";
+    echo "Consultation session time: " . $item->getSessionTime() . "<br>";
+    $price = $item->getPricePerHour() * $item->getSessionTime();
+    echo "Consultation date: " . $item->getDateOfConsultation() . "<br>";
+    echo "Consultation client id: " . $item->getClientId() . "<br>";
+    echo "Gold status: " . $item->getGoldClient() . "<br>";
+    if ($item->getGoldClient() == "yes" && substr($item->getDateOfConsultation(),-8) <= "11:00:00" && substr($item->getDateOfConsultation(),-8) >= "08:00:00")
+    {
+        echo "Consultation discount: " . $item->getDiscount() . " $<br>";
+        $GoldDiscount = $item->getDiscount() * 3;
+        $priceTemp = $price * $GoldDiscount;
+        $priceWithDiscount = $price - $priceTemp;
+        echo "Consultation full price: " . $priceWithDiscount  . " $<br>";
+    }
+    elseif ($item->getGoldClient() == "no" && substr($item->getDateOfConsultation(),-8) <= "11:00:00" && substr($item->getDateOfConsultation(),-8 >= "08:00:00"))
+    {
+        echo "Consultation discount: " . $item->getDiscount() . " $<br>";
+        $priceTemp = $price * $item->getDiscount();
+        $priceWithDiscount = $price - $priceTemp;
+        echo "Consultation full price: " . $priceWithDiscount  . " $<br>";
+    } 
+    elseif ($item->getGoldClient() == "yes")
+    {
+        echo "Consultation discount: " . $item->getDiscount() . " $<br>";
+        $GoldDiscount = $item->getDiscount() * 2;
+        $priceTemp = $price * $GoldDiscount;
+        $priceWithDiscount = $price - $priceTemp;
+        echo "Consultation full price: " . $priceWithDiscount  . " $<br>";
+    }
+    else 
+    {
+        echo "Consultation full price: " . $price  . " $<br>";
+    }
+    echo "<br>";
+} */

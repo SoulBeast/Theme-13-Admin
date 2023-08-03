@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+
+        <table name="consultation_table">
+
+               <column xsi:type="int" name="consultation_id" padding="10" identity="true" unsigned="true" nullable="false" comment="Consultation Id"/>
+
+               <column xsi:type="text" name="consultation_name" nullable="false" comment="Name"/>
+
+               <column xsi:type="int" name="session_time" padding="10" unsigned="true" nullable="false" comment="Session Time"/>
+
+               <column xsi:type="datetime" name="date_of_consultation" nullable="true" comment="Date of consultation"/>
+
+               <column xsi:type="int" name="client_id" padding="10" unsigned="true" nullable="false" comment="Client Id"/>
+
+               <column xsi:type="float" name="discount" unsigned="true" nullable="false" comment="Discount"/>
+
+               <constraint xsi:type="primary" referenceId="PRIMARY">
+
+                       <column name="consultation_id"/>
+
+               </constraint>
+
+        </table>
+
+</schema>

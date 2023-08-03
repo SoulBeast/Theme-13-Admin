@@ -1,0 +1,32 @@
+{
+    "custom_table": {
+        "column": {
+            "entity_id": true,
+            "reference_id": true,
+            "title": true,
+            "description": true,
+            "time": true,
+            "comment": true,
+            "referrence_id": true,
+            "body": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        },
+        "index": {
+            "CUSTOM_TABLE_REFERENCE_ID": true
+        }
+    },
+    "new_custom_table": {
+        "column": {
+            "entity_id": true,
+            "reference_id": true,
+            "title": true,
+            "description": true,
+            "time": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}
