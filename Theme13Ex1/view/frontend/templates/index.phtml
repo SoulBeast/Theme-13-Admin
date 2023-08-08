@@ -1,0 +1,30 @@
+<?php
+
+/** @var \Perspective\Theme13Ex1\Block\Template $block */
+
+
+$viewModel = $block->getViewModel();
+
+############### Ex 13.1 ###############
+$currentProduct = $viewModel->getCurrentProduct();
+
+if ($viewModel->isEnabled()) :
+    if ($viewModel->isEnabledUAH()) :
+        echo "<h3 style='color:black'>" . "Цена в гривнах: " . "</h3>" . "<h3 style='color:red'>" . $currentProduct->getFinalPrice() * $viewModel->getUAH() . " ₴" . "</h3>";
+    endif;
+    if ($viewModel->isEnabledUSD()) :
+        echo "<h3 style='color:black'>" . "Цена в долларах: " . "</h3>" . "<h3 style='color:red'>" . $currentProduct->getFinalPrice() * $viewModel->getUSD() . " $" . "</h3>";
+    endif;
+    if ($viewModel->isEnabledEURO()) :
+        echo "<h3 style='color:black'>" . "Цена в евро: " . "</h3>" . "<h3 style='color:red'>" . $currentProduct->getFinalPrice() * $viewModel->getEURO() . " €" . "</h3>";
+    endif;
+endif;
+######################################
+
+###### Ex 13.1 additional task #######
+$currentProductMagentoUAH = $viewModel->convertPrice($currentProduct->getFinalPrice(),"USD","UAH");
+$currentProductMagentoEURO = $viewModel->convertPrice($currentProduct->getFinalPrice(), "USD","EUR");
+
+echo "<h3 style='color:black'>" . "Цена в гривнах (Currency Rates): " . "</h3>" . "<h3 style='color:red'>" . $currentProductMagentoUAH . " ₴" . "</h3>";
+echo "<h3 style='color:black'>" . "Цена в евро (Currency Rates): " . "</h3>" . "<h3 style='color:red'>" . $currentProductMagentoEURO . " €" . "</h3>";
+######################################
