@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+
+    <body>
+
+        <referenceContainer name="content">
+
+            <block class="Inviqa\SystemConfigExample\Block\Config"
+
+            name="Inviqa_SystemConfigExample_Name"
+
+            template="Inviqa_SystemConfigExample::index.phtml" />
+
+        </referenceContainer>
+
+    </body>
+
+</page>

@@ -1,0 +1,17 @@
+{
+    "name": "inviqa/systemconfigexample",
+    "description": "",
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "license": [
+      "MIT"
+    ],
+    "autoload": {
+      "psr-4": {
+        "Inviqa\\SystemConfigExample\\": ""
+      },
+      "files": [
+        "registration.php"
+      ]
+    }
+  }

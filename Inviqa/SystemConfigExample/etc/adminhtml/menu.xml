@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+
+    <menu>
+
+        <add id="Inviqa_SystemConfigExample::inviqa" title="Inviqa" module="Inviqa_SystemConfigExample" sortOrder="51" resource="Inviqa_SystemConfigExample::inviqa"/>
+
+        <add id="Inviqa_SystemConfigExample::inviqa_configuration" title="Configuration" module="Inviqa_SystemConfigExample" sortOrder="99" parent="Inviqa_SystemConfigExample::inviqa" action="adminhtml/system_config/edit/section/inviqa" resource="Inviqa_SystemConfigExample::inviqa"/>
+
+    </menu>
+
+</config>
